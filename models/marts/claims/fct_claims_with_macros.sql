@@ -29,16 +29,12 @@ select
     paid_amount,
     claim_status,
     provider_specialty,
-
     -- MACRO USAGE: classify_diagnosis
     {{ classify_diagnosis('diagnosis_code') }}      as clinical_category,
-
     -- MACRO USAGE: calc_discount_pct
     {{ calc_discount_pct('billed_amount', 'allowed_amount') }} as discount_pct,
-
     -- MACRO USAGE: safe_divide
     {{ safe_divide('paid_amount', 'billed_amount') }} as payment_ratio,
-
     -- MACRO USAGE: date_label
     {{ date_label('extract(year from service_date)', 'extract(month from service_date)') }} as service_month_label
 
