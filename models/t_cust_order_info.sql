@@ -9,7 +9,7 @@ select
 customer_id as customer_id,
 first_name,
 last_name
-from {{ source('s1', 'customers') }}
+from {{ ref('t_customer') }}
 ),
 orders as (
 select
@@ -17,7 +17,7 @@ order_id as order_id,
 customer_id as customer_id,
 order_date,
 status
-from {{ source('s1', 'orders') }}
+from {{ ref('t_order') }}
 ),
 customer_orders as (
 select
