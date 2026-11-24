@@ -7,6 +7,8 @@ sources:
       - name: customers
       - name: payment
       - name: cust_info
+      - name: t_tickets
+      - name: s_emp
   - name: s2
     database: hdfc_db
     schema: bronze
